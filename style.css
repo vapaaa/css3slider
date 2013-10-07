@@ -1,0 +1,100 @@
+* {
+
+  /*basit reset kodları */
+  
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  
+}
+body {
+  
+  background:#efeefe;
+  font:14px "Open Sans",arial,sans-serif;
+ 
+}
+
+h1 {text-align:center;color:#656565;padding-top:30px;}
+
+.slider {
+
+/*Burada slide alanımızın genişliğini ve yükselliğini veriyoruz.Bu değerler tamamen sizin insiyatifinize
+kalmış.Sayfanızda ayıracağınız alana göre değer verebilirsiniz.Burada sadece dikkat etmeniz gereken
+daha sonra bu genişliği kaç tane li oluşturduysanız ona bölüp değeri ligeniliğine atamanızdır.Yani 
+örnek olarak ben 4 tane resim kullandım.4 tane li olanım var.720/4=180 bu değer benim her bir 'li'
+geniliğimi ifade eder.*/
+
+  width:720px;
+  height:360px;
+  overflow:hidden;
+  margin:30px auto;
+  box-shadow:2px 4px 10px rgba(125,125,125, 0.8);
+}
+
+.slider ul {
+
+  /*bazı browserlarda titreşim oluşmunu engellemek için list elementimize hayali genişlik veriyoruz */
+ 
+  list-style-type:none;
+  width:30000px;
+}
+
+.slider ul li {
+
+/* 'li' genişliğimi 720/4 ile oluşturduk.Bu değer slidemız yüklendğinde her bir fotonun genişliğini ifade ediyor */
+  position:relative;
+  display:block;
+  float:left;
+  width:180px;
+  border-left:1px solid rgba(145,145,145, 0.6);  
+  box-shadow:0 0 20px 1px rgba(22,22,22, 0.5);
+  
+  -webkit-transition:all 0.5s ease;
+  -moz-transition:all 0.5s ease;
+  transition:all 0.5s ease;
+}
+
+
+
+.slider ul:hover li {
+
+/*faremiz herhangi bir fotonun üzerine geldiğinde diğer 3 fotonun genişliğini veriyoruz.Genişilik 180 den 40'a düşüyor.*/
+
+  width:40px;
+}
+
+.slider ul li:hover {
+
+/* faremiz bir fotonun üzerine geldiğinde o fotonun genişiliğini veriyoruz.Bu değeri şuşekilde oluşturuyorsunuz.Toplam alanımız 720,
+fare herhangi bir fotonun üzerine geldiğinde diğer 3 fotonun her birinin genişliği 40 yani toplam 120,720 den 120 çıkarması basit:)
+geriye 600 kalıyor.Siz isterseniz 3,5,6 veya daha fazla foto kullanabilirsiniz.Değerleri de ona göre oluşturmalısınız.*/
+  
+  width:600px;
+}
+
+.slider li img {
+  
+  display:block;
+}
+
+.title {
+  
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:600px;
+  background:rgba(22,22,22,0.4);
+  
+}
+
+.title a {
+  display:block;
+  padding:20px;
+  color:white;
+  font:18px;
+  text-decoration:none;
+  
+  
+}
